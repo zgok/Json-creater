@@ -4,10 +4,7 @@ import random
 import requests
 import pandas as pd
 
-from Utils import load_config
-
-config = load_config()
-url = config["api_url"]
+url = "https://raw.githubusercontent.com/zgok/api_json_files/refs/heads/main/raw_json.json"
 response= requests.get(url)
 df=pd.json_normalize(response.json())
 print(df.to_string(index=False))
